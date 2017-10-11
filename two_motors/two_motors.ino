@@ -26,7 +26,7 @@ void loop() { // Run our function!
   uint8_t i;
   
   motorA.run(FORWARD);
-  motorB.run(FORWARD);
+  motorB.run(BACKWARD);
   // Now we are doing things for both motors, not just one motor
   
   for (i=100; i<200; i++) {
@@ -49,7 +49,7 @@ void loop() { // Run our function!
   delay(1000); // 1 second
 
   motorA.run(BACKWARD); // Same as forward but now backward!
-  motorB.run(BACKWARD);
+  motorB.run(FORWARD);
   
   for (i=100; i<200; i++) {
     // Speed up motors
