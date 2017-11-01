@@ -1,16 +1,17 @@
 #include <AFMotor.h>
 
-AF_DCMotor motorA(4); //Right motor
-AF_DCMotor motorB(1); //Left motor
+AF_DCMotor motorA(1); //Right motor
+AF_DCMotor motorB(3); //Left motor
 
 //CALIBRATION
-int stridelength = 10; //time to move forward 1 pace
-int turnlength = 10; //time it takes to rotate 90 degrees
+int stridelength = 1000; //time to move forward 1 pace
+int turnlength = 1000; //time it takes to rotate 90 degrees
 int pause = 2000;
 uint8_t i = 200; //data type i
 
 // distance = speed x time, so to calibrate you can change speed or time
 
+// ----------------THESE ARE FUNCTIONS-------------- //
 void setup() {
   Serial.begin(9600);
 
@@ -51,23 +52,32 @@ void turnRight() {
   
 }
 
+// ---------------THESE ARE INSTRUCTIONSS-------------- //
+// Change this to make the bot do what you want!
 void loop() {
-
-  stride(); //top of E
+  stride(); 
+  delay(pause);
+  turnRight();
+  delay(pause);
+  stride(); 
+  delay(pause);
   turnLeft();
-  stride(); //top, side of E
+  delay(pause);
+  stride(); 
+  delay(pause);
   turnLeft();
-  stride(); //middle of E
+  delay(pause);
   turnLeft();
+  delay(pause);
+  stride();
+  delay(pause);
   turnLeft();
-  stride(); //double back on middle of E
+  delay(pause);
+  stride(); 
+  delay(pause);
   turnLeft();
-  stride(); //bottom, side of E
-  turnLeft();
-  stride(); //bottom of E
-
-
-  
-  
+  delay(pause);
+  stride(); 
+  delay(pause);
 
 }

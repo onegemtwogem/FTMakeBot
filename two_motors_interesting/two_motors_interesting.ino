@@ -19,7 +19,7 @@ void setup() { // test that it's all working
   motorA.setSpeed(200); 
   motorB.setSpeed(200);
 
-  motorA.run(RELEASE); 
+  motorA.run(RELEASE);
   motorB.run(RELEASE);
   delay(pause); // Uses our first variable
 }
